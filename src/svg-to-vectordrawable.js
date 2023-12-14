@@ -313,8 +313,12 @@ JS2XML.prototype.refactorData = function(data, floatPrecision, fillBlack, tint) 
             }
             x = this.round(x, floatPrecision);
             y = this.round(y, floatPrecision);
-            width = this.round(width, floatPrecision);
-            height = this.round(height, floatPrecision);
+			// ====todo定制大小======
+            //width = this.round(width, floatPrecision);
+            //height = this.round(height, floatPrecision);
+			width = 24;
+			height = 24;
+			// ====todo定制大小======
             rx = this.round(rx, floatPrecision);
             ry = this.round(ry, floatPrecision);
             let pathData = this.rectToPathData(x, y, width, height, rx, ry);
@@ -529,6 +533,8 @@ JS2XML.prototype.refactorData = function(data, floatPrecision, fillBlack, tint) 
                 this.height = h;
             }
         }
+		this.width =24 ;
+		this.height = 24 ;
         elemSVG.attrs = {};
         // SVG is not support sweep (angular) gradient
         if (data.querySelector("linearGradient, radialGradient, sweepGradient, aapt\\:attr")) {
